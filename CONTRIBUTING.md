@@ -1,0 +1,3 @@
+# Contributing
+
+Create an issue describing the business problem and acceptance criteria. Develop work on topic branches. Keep pull requests small and link requirements. Run lint, type checks, tests, tenant security checks and documentation checks as applicable. Never commit production keys or customer data. Database migrations must be reversible where practical and reviewed before deployment. Changes to messaging behavior must test consent and provider policy compliance. Require independent review for auth, billing, AI tool permissions and migrations. Follow conventional commit naming where possible.

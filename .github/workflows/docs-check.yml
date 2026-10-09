@@ -1,0 +1,19 @@
+name: Documentation checks
+on:
+  push:
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate documentation foundation
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in README.md ESSENTIALS.md ARCHITECTURE.md SECURITY.md ROADMAP.md docs/INDEX.md docs/product/PRD.md; do
+            test -s "$file" || { echo "Missing or empty: $file"; exit 1; }
+          done
+          echo 'Documentation validated'
